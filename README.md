@@ -1,4 +1,4 @@
-# WOA Infrared Sauna Landing Page
+# WOA Massage Chairs Landing Page
 
 Simple static landing page built with HTML and CSS.
 
@@ -17,4 +17,4 @@ Simple static landing page built with HTML and CSS.
    - Publish directory: `.`
 4. Deploy.
 
-The hero button links to `#instructions`, which is the "Instruction for use" section.
+The hero button links to `#instructions`, which is the "Recommendations for use" section.

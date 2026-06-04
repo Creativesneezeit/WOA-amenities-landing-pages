@@ -131,7 +131,7 @@ h1 {
 }
 
 .hero__copy {
-  width: min(560px, 100%);
+  width: min(740px, 100%);
   margin-top: 10px;
   overflow-wrap: break-word;
 }
@@ -279,6 +279,8 @@ h1 {
 }
 
 .benefit-card p {
+  font-size: 15px;
+  letter-spacing: 0.45px;
   color: var(--text);
   line-height: 1.4;
 }
@@ -286,45 +288,35 @@ h1 {
 .instructions {
   width: 100%;
   max-width: none;
-  display: grid;
-  grid-template-columns: minmax(0, 610px) minmax(0, 560px);
-  justify-content: center;
-  align-items: center;
-  gap: 70px;
+  display: block;
   padding: 100px var(--gutter);
   background: var(--muted);
 }
 
-.instructions__image {
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.instructions__image img {
-  width: 100%;
-  aspect-ratio: 61 / 62;
-  object-fit: cover;
+.instructions__content {
+  width: min(var(--container), 100%);
+  margin: 0 auto;
 }
 
 .instructions__content .section__heading {
-  margin-bottom: 45px;
+  margin-bottom: 30px;
 }
 
 .steps {
   display: grid;
-  gap: 30px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 27px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .steps li {
-  display: grid;
-  grid-template-columns: 58px minmax(0, 1fr);
-  gap: 32px;
-  align-items: start;
-  padding-bottom: 30px;
-  border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 23px;
+  align-items: flex-start;
 }
 
 .steps li:last-child {
@@ -332,16 +324,11 @@ h1 {
   border-bottom: 0;
 }
 
-.steps span {
-  display: grid;
-  width: 58px;
-  height: 58px;
-  place-items: center;
-  border-radius: 5px;
-  background: var(--teal);
-  color: var(--black);
-  font-size: 18px;
-  font-weight: 800;
+.steps img {
+  width: 100%;
+  aspect-ratio: 466 / 700;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .steps h3 {
@@ -352,14 +339,18 @@ h1 {
   color: var(--text);
 }
 
+.steps strong {
+  font-weight: 700;
+}
+
 .information {
   padding-bottom: 85px;
 }
 
 .info-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 50px;
+  grid-template-columns: 1fr;
+  gap: 0;
 }
 
 .info-card {
@@ -422,7 +413,7 @@ h1 {
 }
 
 .footer__image {
-  object-position: center;
+  object-position: 60% 80%;
 }
 
 .footer__overlay {
@@ -514,14 +505,16 @@ h1 {
   }
 
   .instructions {
-    grid-template-columns: 1fr;
-    gap: 44px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
-  .instructions__image,
   .instructions__content {
     width: min(720px, 100%);
-    justify-self: center;
+  }
+
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .info-grid {
@@ -553,14 +546,13 @@ h1 {
 
 @media (max-width: 700px) {
   :root {
-    --gutter: 20px;
+    --gutter: 16px;
   }
 
   .hero {
     min-height: 680px;
   }
 
-  .hero__image,
   .footer__image {
     object-position: 62% center;
   }
@@ -576,6 +568,7 @@ h1 {
 
   .site-header {
     padding-top: 22px;
+    padding-bottom: 10px;
   }
 
   .site-header__logo {
@@ -625,6 +618,7 @@ h1 {
   }
 
   .benefits__grid,
+  .steps,
   .info-grid {
     grid-template-columns: 1fr;
   }
@@ -638,14 +632,7 @@ h1 {
   }
 
   .steps li {
-    grid-template-columns: 48px minmax(0, 1fr);
-    gap: 20px;
-  }
-
-  .steps span {
-    width: 48px;
-    height: 48px;
-    font-size: 16px;
+    gap: 18px;
   }
 
   .info-card {
@@ -654,6 +641,7 @@ h1 {
 
   .callout {
     padding: 28px;
+    margin-top: 28px;
   }
 
   .footer {
@@ -692,13 +680,13 @@ h1 {
 @media (max-width: 520px) {
   .site-header,
   .hero__content,
-  .section {
-    width: min(300px, calc(100% - (var(--gutter) * 2)));
+  .section,
+  .footer__bar {
+    width: calc(100% - (var(--gutter) * 2)); 
   }
 
-  .instructions__image,
   .instructions__content {
-    width: min(300px, 100%);
+    width: calc(100% - (var(--gutter) * 2)); 
   }
 
   .instructions {
