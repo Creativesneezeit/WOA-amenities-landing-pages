@@ -99,7 +99,7 @@ a {
 
 .amenity-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(390px, 100%), 1fr));
   gap: 40px;
 }
 
@@ -176,6 +176,10 @@ a {
 }
 
 .hero__image {
+  object-position: center;
+}
+
+.hero__image--tanning {
   object-position: center;
 }
 
@@ -601,6 +605,10 @@ h1 {
   object-position: center;
 }
 
+.footer__image--tanning {
+  object-position: center;
+}
+
 .footer__overlay {
   position: absolute;
   inset: 0;
@@ -969,5 +977,31 @@ h1 {
   .home-hero h1,
   .home-hero__content > p:last-child {
     max-width: 270px;
+  }
+
+  .hero__content {
+    width: min(320px, calc(100% - (var(--gutter) * 2)));
+  }
+
+  .hero__copy,
+  .hero__copy p:last-child,
+  .section__heading {
+    max-width: 300px;
+  }
+
+  .section {
+    width: min(320px, calc(100% - (var(--gutter) * 2)));
+  }
+
+  .benefit-card,
+  .info-card,
+  .amenity-card {
+    min-width: 0;
+  }
+
+  .benefit-card p,
+  .info-card li,
+  .section__heading p {
+    overflow-wrap: break-word;
   }
 }
