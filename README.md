@@ -8,6 +8,7 @@ Simple static amenity guide site built with HTML and CSS.
 - `infrared-sauna.html` - infrared sauna amenity guide
 - `massage-chair.html` - massage chair amenity guide
 - `tanning.html` - tanning amenity guide
+- `hydromassage.html` - HydroMassage amenity guide
 - `styles.css` - shared responsive styling
 - `assets/` - local images and SVGs
 
