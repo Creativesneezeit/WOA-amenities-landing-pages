@@ -1,11 +1,13 @@
-# WOA Massage Chairs Landing Page
+# WOA Amenity Landing Pages
 
-Simple static landing page built with HTML and CSS.
+Simple static amenity guide site built with HTML and CSS.
 
 ## Files
 
-- `index.html` - page markup
-- `styles.css` - responsive styling
+- `index.html` - simple amenities homepage
+- `infrared-sauna.html` - infrared sauna amenity guide
+- `massage-chair.html` - massage chair amenity guide
+- `styles.css` - shared responsive styling
 - `assets/` - local images and SVGs
 
 ## Deploy to Netlify
@@ -17,4 +19,4 @@ Simple static landing page built with HTML and CSS.
    - Publish directory: `.`
 4. Deploy.
 
-The hero button links to `#instructions`, which is the "Recommendations for use" section.
+Each amenity page uses the same shared stylesheet and reusable section/card structure so more amenity pages can be added later.

@@ -37,6 +37,128 @@ a {
   color: inherit;
 }
 
+.home-hero {
+  position: relative;
+  min-height: 640px;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.home-hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.home-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(17, 17, 17, 0.86) 0%,
+    rgba(17, 17, 17, 0.58) 55%,
+    rgba(17, 17, 17, 0.28) 100%
+  );
+}
+
+.home-hero__content {
+  position: relative;
+  z-index: 2;
+  width: min(var(--container), calc(100% - (var(--gutter) * 2)));
+  margin: 0 auto;
+  padding: 150px 0 120px;
+}
+
+.home-hero__eyebrow {
+  margin-bottom: 10px;
+  color: var(--teal);
+  font-family: var(--display);
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.4px;
+}
+
+.home-hero h1 {
+  max-width: 780px;
+}
+
+.home-hero__content > p:last-child {
+  width: min(620px, 100%);
+  margin-top: 16px;
+  font-size: 16px;
+  letter-spacing: 0.65px;
+}
+
+.amenity-index {
+  padding-top: 90px;
+}
+
+.amenity-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+}
+
+.amenity-card {
+  display: grid;
+  grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+  min-height: 220px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--muted);
+  color: var(--black);
+  text-decoration: none;
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.amenity-card:hover,
+.amenity-card:focus-visible {
+  background: #ededed;
+  transform: translateY(-3px);
+}
+
+.amenity-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.amenity-card div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 32px;
+}
+
+.amenity-card p {
+  color: var(--teal);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.65px;
+}
+
+.amenity-card h3 {
+  margin-top: 8px;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.25px;
+}
+
+.amenity-card span {
+  margin-top: 28px;
+  color: var(--blue);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
 .hero {
   position: relative;
   min-height: 850px;
@@ -343,6 +465,60 @@ h1 {
   font-weight: 700;
 }
 
+.instructions--sauna {
+  display: grid;
+  grid-template-columns: minmax(0, 610px) minmax(0, 560px);
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+}
+
+.instructions--sauna .instructions__image {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.instructions--sauna .instructions__image img {
+  width: 100%;
+  aspect-ratio: 61 / 62;
+  object-fit: cover;
+}
+
+.instructions--sauna .instructions__content {
+  width: auto;
+  margin: 0;
+}
+
+.instructions--sauna .instructions__content .section__heading {
+  margin-bottom: 45px;
+}
+
+.steps--sauna {
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.steps--sauna li {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+}
+
+.steps--sauna span {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border-radius: 5px;
+  background: var(--teal);
+  color: var(--black);
+  font-size: 18px;
+  font-weight: 800;
+}
+
 .information {
   padding-bottom: 85px;
 }
@@ -351,6 +527,11 @@ h1 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0;
+}
+
+.info-grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 50px;
 }
 
 .info-card {
@@ -414,6 +595,10 @@ h1 {
 
 .footer__image {
   object-position: 60% 80%;
+}
+
+.footer__image--center {
+  object-position: center;
 }
 
 .footer__overlay {
@@ -481,6 +666,14 @@ h1 {
     --gutter: 28px;
   }
 
+  .home-hero {
+    min-height: 560px;
+  }
+
+  .home-hero__content {
+    padding-top: 130px;
+  }
+
   .hero {
     min-height: 760px;
   }
@@ -509,12 +702,27 @@ h1 {
     padding-bottom: 80px;
   }
 
+  .instructions--sauna {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
   .instructions__content {
     width: min(720px, 100%);
   }
 
+  .instructions--sauna .instructions__image,
+  .instructions--sauna .instructions__content {
+    width: min(720px, 100%);
+    justify-self: center;
+  }
+
   .steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .steps--sauna {
+    grid-template-columns: 1fr;
   }
 
   .info-grid {
@@ -547,6 +755,28 @@ h1 {
 @media (max-width: 700px) {
   :root {
     --gutter: 16px;
+  }
+
+  .home-hero {
+    min-height: 540px;
+  }
+
+  .home-hero__overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(17, 17, 17, 0.92) 0%,
+      rgba(17, 17, 17, 0.72) 70%,
+      rgba(17, 17, 17, 0.46) 100%
+    );
+  }
+
+  .home-hero__content {
+    padding-top: 110px;
+    padding-bottom: 90px;
+  }
+
+  .home-hero__eyebrow {
+    font-size: 30px;
   }
 
   .hero {
@@ -619,8 +849,17 @@ h1 {
 
   .benefits__grid,
   .steps,
-  .info-grid {
+  .info-grid,
+  .amenity-grid {
     grid-template-columns: 1fr;
+  }
+
+  .amenity-card {
+    grid-template-columns: 1fr;
+  }
+
+  .amenity-card img {
+    aspect-ratio: 16 / 9;
   }
 
   .benefit-card {
@@ -659,7 +898,12 @@ h1 {
     font-size: 32px;
   }
 
+  .home-hero__eyebrow {
+    font-size: 26px;
+  }
+
   .hero__copy p:last-child,
+  .home-hero__content > p:last-child,
   .section__heading p,
   .steps p,
   .benefit-card p,
@@ -680,6 +924,7 @@ h1 {
 @media (max-width: 520px) {
   .site-header,
   .hero__content,
+  .home-hero__content,
   .section,
   .footer__bar {
     width: calc(100% - (var(--gutter) * 2)); 
@@ -714,5 +959,15 @@ h1 {
 
   .footer__bar {
     width: min(300px, calc(100% - (var(--gutter) * 2)));
+  }
+
+  .home-hero__content,
+  .amenity-index {
+    width: min(320px, calc(100% - (var(--gutter) * 2)));
+  }
+
+  .home-hero h1,
+  .home-hero__content > p:last-child {
+    max-width: 270px;
   }
 }
