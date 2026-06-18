@@ -135,7 +135,8 @@ a {
   align-items: flex-start;
   justify-content: flex-start;
   min-width: 0;
-  padding: 28px;
+  padding: 22px;
+  gap: 26px;
 }
 
 .amenity-card p {
@@ -147,7 +148,6 @@ a {
 }
 
 .amenity-card h3 {
-  margin-top: 8px;
   font-size: 25px;
   font-weight: 700;
   line-height: 1.2;
@@ -207,6 +207,14 @@ a {
 }
 
 .hero__image--beauty {
+  object-position: center;
+}
+
+.hero__image--cryo {
+  object-position: center;
+}
+
+.hero__image--red-light {
   object-position: center;
 }
 
@@ -304,6 +312,21 @@ h1 {
 
 .hero__copy--beauty .eyebrow {
   width: min(640px, 100%);
+  white-space: normal;
+}
+
+.hero__copy--cryo .eyebrow {
+  width: min(625px, 100%);
+  white-space: normal;
+}
+
+.hero__copy--theragun .eyebrow {
+  width: min(560px, 100%);
+  white-space: normal;
+}
+
+.hero__copy--red-light .eyebrow {
+  width: min(560px, 100%);
   white-space: normal;
 }
 
@@ -484,7 +507,7 @@ margin-bottom: 30px;
 .steps {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 27px;
+  gap: 60px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -665,6 +688,11 @@ margin-bottom: 30px;
   padding-top: 50px;
 }
 
+.guide-section--cryo {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
 .guide-section--reverse .guide-section__image {
   order: 2;
 }
@@ -682,6 +710,16 @@ margin-bottom: 30px;
   width: 100%;
   aspect-ratio: 636 / 374;
   object-fit: cover;
+}
+
+.guide-section__image--portrait {
+  justify-self: center;
+  max-width: 420px;
+}
+
+.guide-section__image--portrait img {
+  aspect-ratio: 364 / 493;
+  object-fit: contain;
 }
 
 .guide-section__content .section__heading {
@@ -752,6 +790,61 @@ margin-bottom: 30px;
 
 .information {
   padding-bottom: 85px;
+}
+
+.recommendations {
+  width: 100%;
+  max-width: none;
+  padding: 100px var(--gutter);
+  background: var(--muted);
+}
+
+.recommendations > .section__heading,
+.recommendations > .recommendation-grid {
+  width: min(var(--container), 100%);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.recommendations > .section__heading {
+  max-width: none;
+}
+
+.recommendation-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 40px;
+}
+
+.recommendation-card {
+  min-width: 0;
+}
+
+.recommendation-card img {
+  width: 100%;
+  aspect-ratio: 308 / 493;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.recommendation-card h3 {
+  margin-top: 23px;
+  margin-bottom: 8px;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.25px;
+}
+
+.recommendation-card p {
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.65px;
+}
+
+.recommendation-card p + p {
+  margin-top: 14px;
 }
 
 .info-grid {
@@ -837,6 +930,10 @@ margin-bottom: 30px;
 }
 
 .footer__image--beauty {
+  object-position: center;
+}
+
+.footer__image--cryo {
   object-position: center;
 }
 
@@ -965,6 +1062,11 @@ margin-bottom: 30px;
     justify-self: center;
   }
 
+  .recommendation-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 60px 28px;
+  }
+
   .guide-section--reverse .guide-section__image,
   .guide-section--reverse .guide-section__content {
     order: initial;
@@ -1056,11 +1158,14 @@ margin-bottom: 30px;
     gap: 10px;
     align-items: start;
     padding: 14px 0;
-    border-top: 1px solid rgba(51, 51, 51, 0.35);
+    border: 0;
   }
 
-  .mobile-control:first-child {
-    border-top: 0;
+  .mobile-control:nth-child(1),
+  .mobile-control:nth-child(4) {
+    margin-bottom: 10px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #505055;
   }
 
   .mobile-control img {
@@ -1179,8 +1284,17 @@ margin-bottom: 30px;
     grid-template-columns: 1fr;
   }
 
+  .recommendation-grid {
+    grid-template-columns: 1fr;
+  }
+
   .guide-section {
     padding: 70px var(--gutter);
+  }
+
+  .guide-section--cryo {
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 
   .amenity-card {
@@ -1202,6 +1316,10 @@ margin-bottom: 30px;
 
   .instructions {
     padding: 70px var(--gutter);
+  }
+
+  .instructions--cryo {
+    padding: 70px 0px ;
   }
 
   .beauty-guide {
@@ -1261,6 +1379,11 @@ margin-bottom: 30px;
 
   .footer__bar nav {
     flex-wrap: wrap;
+  }
+
+
+  .amenity-card div {
+    gap: 0px;
   }
 }
 
@@ -1331,6 +1454,7 @@ margin-bottom: 30px;
   }
 
   .benefit-card p,
+  .benefit-card h3,
   .info-card li,
   .section__heading p {
     overflow-wrap: break-word;
