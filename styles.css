@@ -580,14 +580,6 @@ margin-bottom: 30px;
   font-weight: 700;
 }
 
-.plain-list {
-  margin: 0;
-  padding-left: 20px;
-  color: var(--text);
-  font-size: 16px;
-  letter-spacing: 0.65px;
-}
-
 .beauty-guide {
   width: 100%;
   padding: 100px var(--gutter);
@@ -841,61 +833,6 @@ margin-bottom: 30px;
   padding-bottom: 85px;
 }
 
-.recommendations {
-  width: 100%;
-  max-width: none;
-  padding: 100px var(--gutter);
-  background: var(--muted);
-}
-
-.recommendations > .section__heading,
-.recommendations > .recommendation-grid {
-  width: min(var(--container), 100%);
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.recommendations > .section__heading {
-  max-width: none;
-}
-
-.recommendation-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 40px;
-}
-
-.recommendation-card {
-  min-width: 0;
-}
-
-.recommendation-card img {
-  width: 100%;
-  aspect-ratio: 308 / 493;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.recommendation-card h3 {
-  margin-top: 23px;
-  margin-bottom: 8px;
-  font-size: 25px;
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: 0.25px;
-}
-
-.recommendation-card p {
-  color: var(--text);
-  font-size: 16px;
-  line-height: 1.25;
-  letter-spacing: 0.65px;
-}
-
-.recommendation-card p + p {
-  margin-top: 14px;
-}
-
 .info-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -954,6 +891,10 @@ margin-bottom: 30px;
   background: var(--teal);
   color: var(--black);
   text-align: center;
+}
+
+.callout--flush {
+  margin-top: 30px;
 }
 
 .footer {
@@ -1113,11 +1054,6 @@ margin-bottom: 30px;
   .guide-section__content {
     width: min(720px, 100%);
     justify-self: center;
-  }
-
-  .recommendation-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 60px 28px;
   }
 
   .guide-section--reverse .guide-section__image,
@@ -1337,10 +1273,6 @@ margin-bottom: 30px;
     grid-template-columns: 1fr;
   }
 
-  .recommendation-grid {
-    grid-template-columns: 1fr;
-  }
-
   .guide-section {
     padding: 70px var(--gutter);
   }
@@ -1395,6 +1327,10 @@ margin-bottom: 30px;
   .callout {
     padding: 28px;
     margin-top: 30px;
+  }
+
+  .callout--flush {
+    margin-top: 0px;
   }
 
   .footer {
